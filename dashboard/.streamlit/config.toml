@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#41B8D5"              # Couleur principale (slider, boutons, etc.)
+backgroundColor = "#0E1117"           # Fond principal
+secondaryBackgroundColor = "#262730"  # Fond sidebar/widgets
+textColor = "#FAFAFA"
+font = "sans serif"

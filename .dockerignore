@@ -1,0 +1,14 @@
+.git
+.github
+.env
+.venv
+venv
+__pycache__
+*.pyc
+notebook
+docs
+tests
+scripts
+mlruns
+data/*.xlsx
+*.md

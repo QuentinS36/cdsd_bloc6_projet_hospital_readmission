@@ -1,0 +1,29 @@
+# Secrets
+.env
+
+# Environnements et caches
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.vscode/
+
+# Suivi MLflow local (le suivi de référence est sur DagsHub)
+mlruns/
+mlartifacts/
+
+# Données : seul le CSV de démonstration (jeu synthétique) est versionné
+data/*
+!data/hospital_readmission_dataset.csv
+
+# Dossiers de travail personnels
+Historique/
+dev_log/
+viz/
+docs/
+.github/
+tests/
+pytest.ini
+requirements-dev.txt
