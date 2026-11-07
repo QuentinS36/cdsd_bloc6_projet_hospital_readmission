@@ -1,0 +1,13 @@
+*.env
+
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.vscode/
+
+mlruns/
+mlartifacts/
+
+/docs/demo_api_dashboard.mp4

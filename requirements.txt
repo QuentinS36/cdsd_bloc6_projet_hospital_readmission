@@ -1,0 +1,13 @@
+# Environnement des notebooks (entraînement) — versions de l'environnement d'entraînement
+pandas==2.3.3
+numpy==2.4.6
+scikit-learn==1.9.0
+xgboost==3.2.0
+mlflow==3.15.2
+cloudpickle==3.1.2
+dagshub
+optuna
+matplotlib
+plotly==6.6.0
+nbformat>=4.2.0
+python-dotenv==1.2.4

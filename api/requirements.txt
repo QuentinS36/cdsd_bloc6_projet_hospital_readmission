@@ -1,0 +1,10 @@
+# Versions identiques à l'environnement d'entraînement des modèles (cf. MLmodel) :
+# un modèle picklé doit être rechargé avec les mêmes versions de scikit-learn / xgboost / numpy.
+fastapi==0.162.0
+uvicorn==0.54.0
+mlflow-skinny==3.15.2
+cloudpickle==3.1.2
+numpy==2.4.6
+pandas==2.3.3
+scikit-learn==1.9.0
+xgboost==3.2.0

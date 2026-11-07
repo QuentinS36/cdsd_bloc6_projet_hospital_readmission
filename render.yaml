@@ -1,0 +1,39 @@
+# Blueprint Render : 2 services Docker (API FastAPI + dashboard Streamlit).
+# Offre gratuite : 512 Mo de RAM, mise en veille après 15 min d'inactivité (~1 min de réveil).
+# Les services gratuits ne reçoivent pas de trafic privé : le dashboard appelle l'API par son URL publique.
+services:
+  - type: web
+    name: hospital-readmission-api
+    runtime: docker
+    plan: free
+    region: frankfurt
+    dockerfilePath: ./api/Dockerfile
+    dockerContext: .
+    healthCheckPath: /healthz
+    autoDeployTrigger: commit
+    envVars:
+      - key: DAGSHUB_OWNER
+        sync: false
+      - key: DAGSHUB_REPO
+        sync: false
+      - key: DAGSHUB_USER_TOKEN
+        sync: false
+      - key: API_KEY
+        generateValue: true
+
+  - type: web
+    name: hospital-readmission-dashboard
+    runtime: docker
+    plan: free
+    region: frankfurt
+    dockerfilePath: ./dashboard/Dockerfile
+    dockerContext: .
+    autoDeployTrigger: commit
+    envVars:
+      - key: API_URL # ex. https://hospital-readmission-api.onrender.com (à saisir au 1er déploiement)
+        sync: false
+      - key: API_KEY
+        fromService:
+          type: web
+          name: hospital-readmission-api
+          envVarKey: API_KEY
